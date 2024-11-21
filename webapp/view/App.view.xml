@@ -15,8 +15,8 @@ controllerName="ui5.walkthrough.controller.App"
     showIcon="true"/>
 
 	</VBox>
-	<List
-        id="employeeList"
+<List
+    
         items="{/employees}"
         mode="MultiSelect"
     >
@@ -29,11 +29,9 @@ controllerName="ui5.walkthrough.controller.App"
                 type="Navigation"
                 icon="sap-icon://employee"
             >
-                <!-- <customData>
-                    <m:CustomData key="email" value="{email}"/>
-                    <m:CustomData key="salary" value="{salary}"/>
-                </customData> -->
             </StandardListItem>
         </items>
-    </List>
+    </List> 
 </mvc:View>
+
+
