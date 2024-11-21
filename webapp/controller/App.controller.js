@@ -1,22 +1,30 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/odata/v2/ODataModel",
     "sap/m/MessageBox",
     "sap/m/MessageToast"
-], function(Controller, JSONModel, MessageBox, MessageToast) {
+], function(Controller, ODataModel, MessageBox, MessageToast) {
     "use strict";
 
     return Controller.extend("ui5.walkthrough.controller.App", {
-    onInit(){
-        const oModel= new JSONModel()
-        oModel.loadData("model/data.json")
-        .then(()=>console.log("data was read successfully"))
-        .catch(()=>console.error(error,"An error occured while reading data"))
-        this.getView().setModel(oModel)
-    },
+        onInit: function() {
+            // Set up OData model programmatically
+            const sServiceUrl = "/V2/Northwind/Northwind.svc/";
+            const oODataModel = new ODataModel(sServiceUrl);
+            this.getView().setModel(oODataModel);
+
+            // Optional: Test if data loads successfully
+            oODataModel.read("/Products", {
+                success: function(oData) {
+                    console.log("Data loaded successfully:", oData);
+                },
+                error: function(oError) {
+                    console.error("Error loading OData:", oError);
+                }
+            });
+        },
         onPress: function() {
             MessageToast.show("Button Pressed!");
-            console.log()
         },
         onPost: function(oEvent) {
             const sValue = oEvent.getSource().getValue();

@@ -15,17 +15,17 @@ controllerName="ui5.walkthrough.controller.App"
     showIcon="true"/>
 
 	</VBox>
-<List
-items="{/employees}"
-mode="MultiSelect"
->
-<items>
-<StandardListItem
-title="{name}"
-description="{position}"
-info="{department}"
-icon="sap-icon://employee">
-</StandardListItem>
-</items>
-</List>
+   <List
+            items="{/Products}"
+            mode="MultiSelect">
+            <items>
+                <StandardListItem
+                    title="{ProductName}"
+                    description="{QuantityPerUnit}"
+                    info="{UnitPrice}"
+                    infoState="Information"
+                    icon="sap-icon://product">
+                </StandardListItem>
+            </items>
+        </List>
 </mvc:View>

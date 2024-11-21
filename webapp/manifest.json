@@ -1,6 +1,32 @@
 {
     "_version": "1.65.0",
     "sap.app": {
-      "id": "ui5.walkthrough"
+      "id": "ui5.walkthrough",
+		"dataSources": {
+			"invoiceRemote": {
+				"uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	 },
+"sap.ui5": {
+    "models": {
+        "": {
+            "dataSource": "invoiceRemote",
+            "settings": {
+                "defaultBindingMode": "TwoWay",
+                "defaultCountMode": "Inline",
+                "useBatch": true
+            }
+        }
     }
-  }
+},
+  "models": {
+			"invoice": {
+				"dataSource": "invoiceRemote"
+			}
+		}
+}
