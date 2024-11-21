@@ -3,6 +3,7 @@ xmlns:mvc="sap/ui/core/mvc"
 xmlns="sap/m"
 controllerName="ui5.walkthrough.controller.App"
 >
+<VBox alignItems="Center" justifyContent="Center" width="100%" height="100%">
 <Button text="click me " press="onPress"/>
 	<VBox>
 		<CheckBox text="Option a" selected="true" />
@@ -13,5 +14,26 @@ controllerName="ui5.walkthrough.controller.App"
 	<FeedInput post="onPost"
     showIcon="true"/>
 
-	
+	</VBox>
+	<List
+        id="employeeList"
+        items="{/employees}"
+        mode="MultiSelect"
+    >
+        <items>
+            <StandardListItem 
+                title="{name}"
+                description="{position}"
+                info="{department}"
+                infoState="Information"
+                type="Navigation"
+                icon="sap-icon://employee"
+            >
+                <!-- <customData>
+                    <m:CustomData key="email" value="{email}"/>
+                    <m:CustomData key="salary" value="{salary}"/>
+                </customData> -->
+            </StandardListItem>
+        </items>
+    </List>
 </mvc:View>
