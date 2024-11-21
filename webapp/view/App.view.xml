@@ -16,22 +16,16 @@ controllerName="ui5.walkthrough.controller.App"
 
 	</VBox>
 <List
-    
-        items="{/employees}"
-        mode="MultiSelect"
-    >
-        <items>
-            <StandardListItem 
-                title="{name}"
-                description="{position}"
-                info="{department}"
-                infoState="Information"
-                type="Navigation"
-                icon="sap-icon://employee"
-            >
-            </StandardListItem>
-        </items>
-    </List> 
+items="{/employees}"
+mode="MultiSelect"
+>
+<items>
+<StandardListItem
+title="{name}"
+description="{position}"
+info="{department}"
+icon="sap-icon://employee">
+</StandardListItem>
+</items>
+</List>
 </mvc:View>
-
-

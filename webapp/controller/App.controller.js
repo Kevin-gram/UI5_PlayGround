@@ -7,13 +7,13 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("ui5.walkthrough.controller.App", {
-     onInit(){
-        const oModel=new JSONModel()
+    onInit(){
+        const oModel= new JSONModel()
         oModel.loadData("model/data.json")
-        .then(()=>console.log("there was somthing wrong loading the data"))
-        .catch((error)=>console.error("There was an error ",error))
+        .then(()=>console.log("data was read successfully"))
+        .catch(()=>console.error(error,"An error occured while reading data"))
         this.getView().setModel(oModel)
-     },
+    },
         onPress: function() {
             MessageToast.show("Button Pressed!");
             console.log()
