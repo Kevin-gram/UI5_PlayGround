@@ -8,12 +8,6 @@ controllerName="ui5.walkthrough.controller.App"
 		<CheckBox text="Option a" selected="true" />
 		<CheckBox text="Option b" />
 		<CheckBox text="Warning disabled" valueState="Warning" enabled="false" selected="true" />
-		<CheckBox text="Error" valueState="Error" />
-		<CheckBox text="Error disabled" valueState="Error" enabled="false" selected="true" />
-		<CheckBox text="Information" valueState="Information" />
-		<CheckBox text="Information disabled" valueState="Information" enabled="false" selected="true" />
-		<CheckBox text="Checkbox with wrapping='true' and long text" wrapping="true" width="150px"/>
-        <CheckBox text="Kevin not playing around " wrapping="true" width="45px" valueState="Warning" selected="halfSelected"/>
 	</VBox>
     	<Label text="Without Icon" class="sapUiSmallMarginTop sapUiTinyMarginBottom" />
 	<FeedInput post="onPost"
